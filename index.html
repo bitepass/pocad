@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POCAD</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class', // or 'media'
+      theme: {
+        extend: {
+          colors: {
+            'primary': {
+              light: '#4A90E2', // A pleasant blue
+              DEFAULT: '#357ABD', // Darker blue for primary actions
+              dark: '#2A6DA4'  // Even darker for hover states
+            },
+            'secondary': {
+              light: '#7ED321', // A vibrant green
+              DEFAULT: '#68B31E',
+              dark: '#529418'
+            },
+            'neutral': {
+              light: '#F5F5F5', // Light gray for backgrounds
+              DEFAULT: '#E0E0E0', // Medium gray for borders
+              dark: '#BDBDBD'   // Darker gray for text
+            },
+            'background': {
+              light: '#FFFFFF',
+              dark: '#1A202C', // A deep charcoal for dark mode background
+              altDark: '#2D3748' // Slightly lighter dark for cards/modals
+            },
+            'text': {
+              light: '#212121', // Dark gray for text in light mode
+              dark: '#E2E8F0',  // Light gray for text in dark mode
+              mutedLight: '#757575',
+              mutedDark: '#A0AEC0'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'], // Modern sans-serif font
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <style>
+    html { font-family: 'Inter', sans-serif; }
+    @supports (font-variation-settings: normal) {
+      html { font-family: 'Inter var', sans-serif; }
+    }
+    /* Scrollbar styling for a more modern look */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #4A5568; /* gray-600 */
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #2D3748; /* gray-700 */
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background-color: #A0AEC0; /* gray-400 */
+    }
+    .dark ::-webkit-scrollbar-thumb:hover {
+      background-color: #718096; /* gray-500 */
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
